@@ -693,3 +693,4 @@ The above instructions should cover the majority of the information most users w
 
 Thanks for learning with the DigitalOcean Community. Check out our offerings for compute, storage, networking, and managed databases.
 
+Learn more about us
