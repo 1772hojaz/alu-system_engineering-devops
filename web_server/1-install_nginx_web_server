@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#this program installs inginx on my web server
+
+ssh -i ~/.ssh/school -T ubuntu@34.229.125.55 << 'EOSSH'
+sudo apt update
+sudo apt install nginx -y
+sudo /etc/init.d/nginx start
+sudo update-rc.d -f nginx defaults
+sudo /etc/init.d/nginx status
+EOSSH
