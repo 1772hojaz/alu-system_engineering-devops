@@ -5,8 +5,7 @@ ssh -i ~/.ssh/school -T ubuntu@34.229.125.55 << 'EOSSH'
 sudo apt update
 sudo apt install nginx -y
 
-echo "Holberton School for the win!" > /var/www/html/index.html
-
+sudo bash -c 'echo "Holberton School for the win!" > /var/www/html/index.html'
 sudo /etc/init.d/nginx start
 sudo update-rc.d -f nginx defaults
 sudo /etc/init.d/nginx status
