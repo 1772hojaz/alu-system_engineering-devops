@@ -9,8 +9,4 @@ sudo bash -c 'echo "Holberton School" > /var/www/html/index.html'
 sudo /etc/init.d/nginx restart
 sudo service nginx restart
 
-#this command will create a symbolic link between the file /etc/nginx/sites-available/default and /etc/nginx/sites-enabled/default
-sudo update-rc.d -f nginx defaultis
-sudo /etc/init.d/nginx status
-
 EOSSH
