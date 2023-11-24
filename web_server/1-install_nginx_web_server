@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This is a programn that installs nginx into my web server
+
+sudo apt update
+sudo apt install nginx -y
+sudo bash -c 'echo "Holberton School" > /var/www/html/index.html'
+sudo /etc/init.d/nginx restart
+sudo service nginx restart
