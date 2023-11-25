@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Configure your Nginx server so that /redirect_me is redirecting to another page.
+
+ssh -i ~/.ssh/school -T ubuntu@34.229.125.55 << 'EOSSH'
+sudo sed -i 's/^\tlocation \/ {$/\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation \/ {/' /etc/nginx/sites-available/default
+sudo /etc/init.d/nginx restart
+sudo service nginx restart
+EOSSH
