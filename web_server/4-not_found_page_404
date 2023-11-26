@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Install nginx if not already installed
+# Create the custom 404 page
+# Configure the web server to have a custom 404 page that contains the string Ceci n'est pas une page
+ssh -i ~/.ssh/school -T ubuntu@34.229.125.55 << 'EOSSH'
+sudo apt-get update -y && sudo apt-get upgrade -y
+
+# Install Nginx
+sudo apt-get install nginx -y
+
+# Creating an index page
+echo "Holberton School" | sudo tee /var/www/html/index.html
+
+# Creating a 404 page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# Write data to nginx.conf
+echo "
+events {
+
+}
+
+http {
+	server {
+		listen 80;
+
+		root /var/www/html;
+
+		error_page 404 /404.html;
+
+		location /redirect_me {
+			return 301 https://google.com;
+		}
+	}
+}" | sudo tee /etc/nginx/nginx.conf
+
+# Reload nginx
+sudo service nginx restartservice nginx restart
+EOSSH
