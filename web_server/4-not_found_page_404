@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Install nginx if not already installed
-# Create the custom 404 page
-# Configure the web server to have a custom 404 page that contains the string Ceci n'est pas une page
+# Creating a server with a redirect
 
+# Updating all packages
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Install Nginx
@@ -35,4 +34,4 @@ http {
 }" | sudo tee /etc/nginx/nginx.conf
 
 # Reload nginx
-sudo service nginx restartservice nginx restart
+sudo service nginx restart
