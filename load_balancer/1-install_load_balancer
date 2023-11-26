@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Installing a load balancer
-ssh -i ~/.ssh/proxy ubuntu@54.205.204.17 << 'EOSSH'
+
 # Update software packages
 sudo apt-get -y update && sudo apt-get -y upgrade
 
@@ -14,4 +14,3 @@ sudo sed -i "$ a\listen 5704-lb-01\n\tbind *:80\n\tmode http\n\tbalance roundrob
 
 # Start the proxy
 sudo service haproxy start
-EOSSH
