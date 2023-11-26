@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-#Configure your Nginx server so that /redirect_me is redirecting to another page
-ssh -i ~/.ssh/school ubuntu@34.229.125.55 << 'EOSSH'
-
+#Configure your Nginx server so that /redirect_me is redirecting to another page.
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 sudo apt-get install nginx -y
@@ -26,4 +24,4 @@ http {
 }" | sudo tee /etc/nginx/nginx.conf
 
 sudo service nginx restart
-EOSSH
+
