@@ -2,7 +2,7 @@
 # Install nginx if not already installed
 # Create the custom 404 page
 # Configure the web server to have a custom 404 page that contains the string Ceci n'est pas une page
-ssh -i ~/.ssh/school -T ubuntu@34.229.125.55 << 'EOSSH'
+
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Install Nginx
@@ -36,4 +36,3 @@ http {
 
 # Reload nginx
 sudo service nginx restartservice nginx restart
-EOSSH
