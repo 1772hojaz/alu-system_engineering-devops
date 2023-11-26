@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #config nginx server
-
+ssh -i ~/.ssh/school ubuntu@54.81.60.205 << 'EOSSH'
 sudo apt remove --purge nginx nginx-full nginx-common -y
 sudo apt update
 sudo apt install nginx -y
@@ -30,4 +30,4 @@ printf %s 'server {
 			   ' | sudo tee /etc/nginx/sites-available/default
 
 sudo service nginx restart
-
+EOSSH
