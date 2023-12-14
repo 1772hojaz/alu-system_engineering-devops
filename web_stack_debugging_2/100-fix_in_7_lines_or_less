@@ -2,5 +2,4 @@
 #Another script that configures the container
 sed -i 's/user\s*=\s*www-data;/user nginx;/g' /etc/nginx/nginx.conf
 sed -i 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
-chown -R nginx:nginx /var/www/html
 service nginx restart
